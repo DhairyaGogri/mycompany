@@ -16,12 +16,3 @@ Run Lighthouse (Accessibility, Best Practices, Performance) or axe DevTools befo
 
 ## Content assurance
 Before tender submission, verify the company number/address against the current corporate record, replace illustrative team profiles, confirm any project/reference claims, and add every certificate, policy, insurance limit and financial document actually required by the procurement documents.
-
-
-## Projects page checks
-1. Open `projects.html` and confirm the initial project count is shown.
-2. Use each filter button and confirm the visible cards change without a page reload.
-3. Confirm every filter has an accurate `aria-pressed` state and can be operated using keyboard only.
-4. Confirm verified and illustrative status labels remain visually and semantically distinct.
-5. Confirm external GitHub links use `target="_blank"` with `rel="noopener noreferrer"` and open the intended repository.
-6. At approximately 375px and 768px widths, confirm the project cards, metadata rows and filter controls do not overflow.
