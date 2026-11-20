@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
     <title>Contact | Dhairya & Smit Gogri Ltd</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
@@ -45,9 +47,9 @@
           <span class="eyebrow">Contact</span>
           <h1>Discuss a digital, data or technical services requirement.</h1>
           <p>
-            For procurement and project enquiries, use the company contact
-            details below. The form is a front-end demonstration and does not
-            send messages until a form service is connected during deployment.
+            For procurement and project enquiries, use the registered office
+            details below or prepare an enquiry locally and send it using a
+            monitored company email address.
           </p>
         </div>
       </section>
@@ -67,17 +69,28 @@
                 </p>
               </div>
               <div class="card" style="margin-top: 18px">
+                <h3>General and procurement enquiries</h3>
+                <p>
+                  <a href="mailto:dhairyagogri97@gmail.com">dhairyagogri97@gmail.com</a>
+                </p>
+                <p class="small">
+                  Gmail address supplied for the company website. For a more
+                  professional identity, create a domain-based address after
+                  registering a custom domain.
+                </p>
+              </div>
+              <div class="card" style="margin-top: 18px">
                 <h3>Online presence</h3>
                 <p>
                   <a
                     href="https://dhairyagogri.github.io/"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     >Founder portfolio ↗</a
                   ><br /><a
                     href="https://github.com/DhairyaGogri"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     >GitHub ↗</a
                   >
                 </p>
@@ -87,10 +100,7 @@
               <h3>Project enquiry</h3>
               <form
                 class="form"
-                onsubmit="
-                  event.preventDefault();
-                  document.getElementById('form-status').hidden = false;
-                "
+                data-enquiry-form
               >
                 <div>
                   <label for="name">Name</label
@@ -129,16 +139,18 @@
                   ><textarea id="message" name="message" required></textarea>
                 </div>
                 <button class="btn btn-primary" type="submit">
-                  Send enquiry
+                  Prepare enquiry
                 </button>
-                <div id="form-status" class="notice" role="status" hidden>
-                  <strong>Form captured locally</strong>Connect this form to
-                  Formspree, Netlify Forms or your chosen business mailbox
-                  before production use.
+                <div id="form-status" class="notice" role="status" tabindex="-1" hidden>
+                  <strong>Enquiry prepared locally</strong>
+                  A text file has been downloaded. This static website does not
+                  send or store your details; attach the file to an email sent
+                  to the company.
                 </div>
                 <p class="form-note">
                   Privacy note: do not enter sensitive personal data into this
-                  demonstration form.
+                  form. Downloaded enquiry text remains on your device until you
+                  attach and send it yourself. See the <a href="privacy.html">privacy notice</a>.
                 </p>
               </form>
             </div>
@@ -170,7 +182,7 @@
               <a href="tender-alignment.html">Tender alignment</a><br /><a
                 href="policies.html"
                 >Policies &amp; controls</a
-              >
+              ><br /><a href="privacy.html">Privacy notice</a>
             </p>
           </div>
         </div>

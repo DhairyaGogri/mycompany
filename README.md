@@ -18,7 +18,7 @@ The site uses plain HTML5, CSS3 and vanilla JavaScript. There is no build system
 - `evidence-register.html` — bid-evidence matrix separating proven facts, proposals and missing supporting documents
 - `privacy.html` — plain-English website privacy information
 - `404.html` — static-hosting fallback page
-- `contact.html` — corporate contact details + form demonstration
+- `contact.html` — corporate contact details + privacy-preserving local enquiry preparation
 - `css/styles.css` — global responsive styles
 - `js/site.js` — navigation and small page helpers
 - `js/map-demo.js` — map concept filter interaction
