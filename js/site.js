@@ -95,6 +95,10 @@
     });
   }
 
+  document.querySelectorAll("[data-print-policy]").forEach((button) => {
+    button.addEventListener("click", () => window.print());
+  });
+
   document.querySelectorAll("[data-privacy-settings]").forEach((button) => {
     button.addEventListener("click", () => {
       try {

@@ -3,6 +3,40 @@
 
   const projects = [
     {
+      id: "company-corporate-website",
+      status: "live company project",
+      kind: "public website",
+      category: "Software delivery",
+      title: "DHAIRYA & SMIT GOGRI LTD corporate website",
+      subtitle: "A responsive static company and tender-evidence website",
+      client: "DHAIRYA & SMIT GOGRI LTD",
+      sector: "Corporate and public-sector procurement",
+      challenge: "Present company capabilities, evidence and controls clearly while keeping unsupported tender claims separate from verified facts.",
+      solution: "Built a multi-page responsive website using semantic HTML, CSS and vanilla JavaScript, with privacy controls, mobile navigation, project filtering and procurement evidence pages.",
+      outcome: "Published through GitHub Pages with HTTPS and publicly accessible routes for company, service, project and policy information.",
+      technologies: ["HTML", "CSS", "JavaScript", "GitHub Pages", "Accessibility"],
+      procurementSignals: ["Public evidence", "Responsive delivery", "Privacy controls", "Maintainable implementation"],
+      liveUrl: "https://dhairyagogri.github.io/mycompany/",
+      repoUrl: "https://github.com/DhairyaGogri/mycompany"
+    },
+    {
+      id: "founder-portfolio",
+      status: "live portfolio project",
+      kind: "public website",
+      category: "Web & application",
+      title: "Founder technical and professional portfolio",
+      subtitle: "A live portfolio covering data, AI, software and professional experience",
+      client: "Founder-led public portfolio",
+      sector: "Technology, data and software",
+      challenge: "Present technical work and professional experience clearly without obscuring which items are portfolio evidence and which are commercial company contracts.",
+      solution: "Developed a published portfolio with project summaries, experience information, CV access and links to underlying public repositories.",
+      outcome: "Provides a publicly accessible starting point for reviewing the founder's published technical work and software repositories.",
+      technologies: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      procurementSignals: ["Public provenance", "Technical portfolio", "Repository links", "Clear evidence status"],
+      liveUrl: "https://dhairyagogri.github.io/",
+      repoUrl: "https://github.com/DhairyaGogri/DhairyaGogri.github.io"
+    },
+    {
       id: "mobile-mapping-app",
       status: "verified portfolio evidence",
       kind: "client delivery",
@@ -99,71 +133,6 @@
       repoUrl: "https://github.com/DhairyaGogri/Evolution-of-deep-reinforcement-learning-algorithm"
     },
 
-    /* These entries are intentionally not represented as completed contracts. */
-    {
-      id: "illustrative-place-map",
-      status: "illustrative example",
-      kind: "prospective case study",
-      category: "Public sector",
-      title: "Local place discovery & digital mapping service",
-      subtitle: "A curated alternative to generic navigation for residents and visitors",
-      client: "Illustrative local authority / place partnership",
-      sector: "Local government, tourism & place",
-      challenge: "A town centre has useful local destinations, heritage assets and green spaces, but information is fragmented across pages, maps and third-party services.",
-      solution: "Create a responsive, accessible place-discovery map with curated categories, story-led points of interest, route ideas, search, content management and clear hand-off to external navigation tools.",
-      outcome: "Intended outcome: clearer discovery, stronger local storytelling, easier wayfinding and better visibility for town-centre destinations. Final measures would be agreed with the buyer.",
-      technologies: ["Accessible web UI", "Interactive mapping", "Structured content", "APIs", "Analytics"],
-      procurementSignals: ["Accessibility", "User-centred design", "Data governance", "Value for money"],
-      templateNote: "Replace the client, scope, dates, measures and delivery details with a real project before publishing this as completed work."
-    },
-    {
-      id: "illustrative-service-directory",
-      status: "illustrative example",
-      kind: "prospective case study",
-      category: "Public sector",
-      title: "Accessible public-service directory",
-      subtitle: "Searchable information service for residents and frontline teams",
-      client: "Illustrative public-sector body",
-      sector: "Central or local government",
-      challenge: "Residents and staff need to find accurate service information quickly, including contact routes, eligibility information and location-specific support.",
-      solution: "Design a mobile-first directory with plain-language content, robust search and filtering, structured service records, accessible templates, clear ownership and a lightweight administration workflow.",
-      outcome: "Intended outcome: faster task completion, reduced duplication, improved content consistency and a maintainable service that can evolve with policy or organisational change.",
-      technologies: ["Semantic HTML", "Accessible components", "Search & filtering", "Structured data", "Content workflows"],
-      procurementSignals: ["WCAG-aligned delivery", "Content governance", "Maintainability", "Operational efficiency"],
-      templateNote: "Replace the client, scope, dates, measures and delivery details with a real project before publishing this as completed work."
-    },
-    {
-      id: "illustrative-performance-dashboard",
-      status: "illustrative example",
-      kind: "prospective case study",
-      category: "Public sector",
-      title: "Operational performance dashboard",
-      subtitle: "Decision-ready reporting from fragmented operational data",
-      client: "Illustrative council, arm's-length body or public service",
-      sector: "Public-sector data & reporting",
-      challenge: "Operational teams rely on multiple spreadsheets or data exports and need a consistent view of service demand, performance and emerging issues.",
-      solution: "Create a governed data model, automated refresh process and accessible dashboard with agreed KPI definitions, exception views and audit-friendly documentation.",
-      outcome: "Intended outcome: less manual reporting effort, clearer management information, faster identification of service issues and stronger confidence in reported figures.",
-      technologies: ["Python", "SQL", "Data validation", "Dashboard UI", "Documentation"],
-      procurementSignals: ["Data quality", "Auditability", "Value for money", "Decision support"],
-      templateNote: "Replace the client, scope, dates, measures and delivery details with a real project before publishing this as completed work."
-    },
-    {
-      id: "illustrative-secure-workflow",
-      status: "illustrative example",
-      kind: "prospective case study",
-      category: "Public sector",
-      title: "Secure digital workflow and case intake",
-      subtitle: "Accessible forms with controlled data handling and clear status",
-      client: "Illustrative public-sector service",
-      sector: "Digital service delivery",
-      challenge: "A paper/email-led process creates avoidable manual handling, weak status visibility and inconsistent information capture.",
-      solution: "Design an accessible digital intake journey with validation, role-based access, audit-friendly status changes, notifications and clear data-retention rules.",
-      outcome: "Intended outcome: higher-quality submissions, faster routing, better service visibility and reduced administrative rework while keeping data protection requirements explicit.",
-      technologies: ["Accessible forms", "Server-side validation", "Role-based access", "Audit logging", "Data-retention controls"],
-      procurementSignals: ["Security", "Privacy by design", "Accessibility", "Operational efficiency"],
-      templateNote: "Replace the client, scope, dates, measures and delivery details with a real project before publishing this as completed work."
-    }
   ];
 
   const container = document.querySelector("[data-project-grid]");
@@ -186,15 +155,18 @@
     const visible = projects.filter((project) =>
       activeFilter === "all" ||
       (activeFilter === "verified" && project.status === "verified portfolio evidence") ||
-      (activeFilter === "public-sector" && project.category === "Public sector") ||
+      (activeFilter === "live" && Boolean(project.liveUrl)) ||
       (activeFilter === "data" && project.category === "Data & AI") ||
       (activeFilter === "software" && (project.category === "Software delivery" || project.category === "Web & application"))
     );
 
     container.innerHTML = visible.map((project) => {
-      const tagClass = project.status === "illustrative example" ? "status-tag status-tag-illustrative" : "status-tag";
+      const tagClass = "status-tag";
       const source = project.repoUrl
         ? `<a class="btn btn-secondary" href="${escapeHtml(project.repoUrl)}" target="_blank" rel="noopener noreferrer">View repository <span aria-hidden="true">↗</span></a>`
+        : "";
+      const live = project.liveUrl
+        ? `<a class="btn btn-primary" href="${escapeHtml(project.liveUrl)}" target="_blank" rel="noopener noreferrer">View live project <span aria-hidden="true">↗</span></a>`
         : "";
       const note = project.templateNote
         ? `<div class="case-study-note"><strong>Publishing note</strong><span>${escapeHtml(project.templateNote)}</span></div>`
@@ -219,7 +191,7 @@
           <div class="pill-row">${project.technologies.map((item) => `<span class="pill">${escapeHtml(item)}</span>`).join("")}</div>
           <div class="case-study-signals"><strong>Procurement relevance</strong><span>${project.procurementSignals.map(escapeHtml).join(" · ")}</span></div>
           ${note}
-          ${source ? `<div class="actions">${source}</div>` : ""}
+          ${(live || source) ? `<div class="actions">${live}${source}</div>` : ""}
         </article>
       `;
     }).join("");
