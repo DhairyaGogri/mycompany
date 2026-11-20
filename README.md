@@ -24,6 +24,7 @@ The site uses plain HTML5, CSS3 and vanilla JavaScript. There is no build system
 - `js/map-demo.js` — map concept filter interaction
 - `assets/mark.svg` — lightweight brand mark
 - `docs/DEPLOYMENT.md` — deployment options and configuration
+- `docs/STAFF-PORTAL.md` — secure staff portal architecture and production requirements
 - `docs/TESTING.md` — testing and re-test instructions
 
 ## Important bid-use notes

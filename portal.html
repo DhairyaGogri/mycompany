@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Preview of the DHAIRYA & SMIT GOGRI LTD staff administration portal.">
+  <title>Staff portal preview | Dhairya & Smit Gogri Ltd</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="assets/mark.svg" alt="" width="38" height="38"><span class="brand-text">DHAIRYA &amp; SMIT GOGRI LTD<span class="brand-sub">Staff portal preview</span></span></a>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="container">
+    <div class="notice portal-demo-banner">
+      <strong>Preview only — no real authentication or data storage</strong>
+      This demo is not secure and must not contain real passwords, HR records or personal employee information. A Supabase or Firebase backend with MFA, role-based access and server-side rules is required for production use.
+    </div>
+
+    <div class="portal-shell">
+      <aside class="portal-sidebar">
+        <h3>Company portal</h3>
+        <div class="portal-menu">
+          <button type="button" class="active" data-view="overview">Overview</button>
+          <button type="button" data-view="employees">Employee directory</button>
+          <button type="button" data-view="policies">Policies</button>
+          <button type="button" data-view="documents">Documents</button>
+          <button type="button" data-view="tasks">Work and training</button>
+          <button type="button" data-view="settings">Admin settings</button>
+        </div>
+      </aside>
+
+      <div class="portal-main">
+        <section class="portal-login" data-portal-login>
+          <span class="eyebrow">Demonstration login</span>
+          <h1>Staff portal preview</h1>
+          <p>Select a demo role. No account is created and no credentials are sent or stored.</p>
+          <form>
+            <div>
+              <label for="demo-role">Demo role</label>
+              <select id="demo-role" name="demo-role">
+                <option value="admin">Administrator preview</option>
+                <option value="employee">Employee preview</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Enter preview</button>
+          </form>
+        </section>
+
+        <section class="portal-dashboard" data-portal-dashboard>
+          <div class="portal-toolbar">
+            <div>
+              <span class="eyebrow" data-portal-role>Administrator preview</span>
+              <h2 data-view-title>Overview</h2>
+            </div>
+            <button type="button" class="btn btn-secondary" data-logout>Exit preview</button>
+          </div>
+
+          <div data-view-content></div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Dhairya &amp; Smit Gogri Ltd.</span>
+      <a class="back-to-top" href="index.html">Public website</a>
+    </div>
+  </div>
+</footer>
+<script src="js/site.js"></script>
+<script src="js/portal.js"></script>
+</body>
+</html>
